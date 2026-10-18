@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Course — AttendPro</title>
+<link rel="stylesheet" href="../../css/style.css">
+<link rel="stylesheet" href="../../css/dashboard.css">
+
+</head>
+<body>
+<div id="app-shell-root"></div>
+
+<template id="tpl-course-view">
+  <button class="btn btn-ghost btn-sm" id="back-btn" style="margin-left:-0.5rem;margin-bottom:1rem;"></button>
+
+  <div class="page-heading-row">
+    <div class="page-heading">
+      <h1 style="display:flex;align-items:center;gap:0.5rem;" id="course-title"></h1>
+      <div class="flex items-center gap-3" style="font-size:0.875rem;color:var(--color-muted-foreground);">
+        <span class="badge badge-secondary" id="course-code-badge"></span>
+        <span style="display:flex;align-items:center;gap:0.35rem;" id="course-student-count"></span>
+      </div>
+    </div>
+    <button class="btn btn-primary btn-lg" id="create-session-btn"></button>
+  </div>
+
+  <div class="section-tabs" id="course-tabs">
+    <button class="section-tab active" data-tab="sessions">Sessions</button>
+    <button class="section-tab" data-tab="roster">Students Roster</button>
+  </div>
+
+  <div style="padding-top:1rem;" id="tab-sessions">
+    <div class="card card-flush">
+      <div class="card-content">
+        <div class="sessions-header">
+          <span>Date</span><span>Mark</span><span>Attendance</span><span style="text-align:right;">Action</span>
+        </div>
+        <div id="sessions-list"></div>
+      </div>
+    </div>
+  </div>
+
+  <div style="padding-top:1rem;display:none;" id="tab-roster">
+    <div class="card card-flush">
+      <div class="card-content">
+        <ul class="roster-list" id="roster-list"></ul>
+      </div>
+    </div>
+  </div>
+</template>
+
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2/dist/umd/supabase.js"></script>
+<script src="../../js/lib/client.js"></script>
+<script src="../../js/lib/icons.js"></script>
+<script src="../../js/lib/store.js"></script>
+<script src="../../js/lib/shell.js"></script>
+<script>window.BASE_PATH = '../../';</script>
+<script src="../../js/lecturer/course.js"></script>
+</body>
+</html>

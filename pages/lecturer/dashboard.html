@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Dashboard — AttendPro</title>
+<link rel="stylesheet" href="../../css/style.css">
+<link rel="stylesheet" href="../../css/dashboard.css">
+</head>
+<body>
+<div id="app-shell-root"></div>
+
+<template id="tpl-lect-dashboard">
+  <div class="page-heading-row">
+    <div class="page-heading">
+      <h1>My Courses</h1>
+      <p>Manage sessions, run QR attendance, and review your student rosters.</p>
+    </div>
+    <button class="btn btn-primary btn-lg" id="create-course-btn"></button>
+  </div>
+  <div class="lect-course-grid" id="lect-course-grid"></div>
+</template>
+
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2/dist/umd/supabase.js"></script>
+<script src="../../js/lib/client.js"></script>
+<script src="../../js/lib/icons.js"></script>
+<script src="../../js/lib/store.js"></script>
+<script src="../../js/lib/shell.js"></script>
+<script>window.BASE_PATH = '../../';</script>
+<script src="../../js/lecturer/dashboard.js"></script>
+</body>
+</html>

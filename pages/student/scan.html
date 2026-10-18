@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Scan Attendance — AttendPro</title>
+<link rel="stylesheet" href="../../css/style.css">
+<link rel="stylesheet" href="../../css/dashboard.css">
+</head>
+<body>
+<div id="app-shell-root"></div>
+
+<template id="tpl-scan">
+  <div class="scan-page">
+    <div class="scan-heading">
+      <h1>Scan Attendance</h1>
+      <p>Point your camera at the QR code displayed by your lecturer to mark your attendance for this session.</p>
+    </div>
+
+    <div class="scan-viewport">
+      <div id="qr-reader" style="width:100%;height:100%;"></div>
+      <div class="scan-overlay"></div>
+      <div class="scan-line" id="scan-line" style="display:none;"></div>
+      <div class="corner-brackets" id="corner-brackets">
+        <span class="corner-tl"></span><span class="corner-tr"></span>
+        <span class="corner-bl"></span><span class="corner-br"></span>
+      </div>
+      <div class="scan-icon-center" id="scan-icon-center"></div>
+    </div>
+
+    <div class="scan-status" id="scan-status"></div>
+
+    <div class="scan-actions">
+      <button class="btn btn-primary btn-lg btn-block" id="scan-action-btn"></button>
+      <button class="btn btn-outline btn-lg btn-block" id="scan-cancel-btn">Cancel</button>
+    </div>
+  </div>
+</template>
+
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2/dist/umd/supabase.js"></script>
+<script src="../../js/lib/client.js"></script>
+<script src="https://unpkg.com/html5-qrcode@2.3.8/html5-qrcode.min.js"></script>
+<script src="../../js/lib/icons.js"></script>
+<script src="../../js/lib/store.js"></script>
+<script src="../../js/lib/shell.js"></script>
+<script>window.BASE_PATH = '../../';</script>
+<script src="../../js/student/scan.js"></script>
+</body>
+</html>

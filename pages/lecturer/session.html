@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Create Session — AttendPro</title>
+<link rel="stylesheet" href="../../css/style.css">
+<link rel="stylesheet" href="../../css/dashboard.css">
+</head>
+<body>
+
+<!-- FORM PHASE -->
+<div id="app-shell-root"></div>
+
+<template id="tpl-session-form">
+  <button class="btn btn-ghost btn-sm" id="back-btn" style="margin-left:-0.5rem;margin-bottom:1rem;"></button>
+  <div class="page-heading">
+    <h1>Create Session</h1>
+    <p id="course-subtitle"></p>
+  </div>
+
+  <div class="card" style="max-width:32rem;">
+    <div class="card-content">
+      <form id="session-form">
+        <div class="field">
+          <label class="field-label" for="mark">Mark value</label>
+          <input class="input" id="mark" type="number" min="1" max="10" value="2">
+          <span class="field-description">Marks awarded to each student who checks in.</span>
+        </div>
+        <div class="field">
+          <label class="field-label" for="duration">Expiry / duration (minutes)</label>
+          <input class="input" id="duration" type="number" min="1" max="60" value="10">
+          <span class="field-description">The QR code expires automatically after this time.</span>
+        </div>
+        <button type="submit" class="btn btn-primary btn-lg btn-block" style="margin-top:0.25rem;">Generate QR Code</button>
+      </form>
+    </div>
+  </div>
+</template>
+
+<!-- LIVE PHASE (full-screen overlay) -->
+<template id="tpl-session-live">
+  <div class="session-live">
+    <header class="session-live-header">
+      <div class="brand">
+        <span class="brand-mark" id="live-brand-icon"></span>
+        <span class="brand-name">AttendPro</span>
+      </div>
+      <div class="flex items-center gap-2 text-muted" style="font-size:0.875rem;">
+        <span id="live-icon-users"></span>
+        <span class="tabular-nums" id="checkin-count"></span>
+      </div>
+    </header>
+
+    <div class="session-live-body">
+      <div class="qr-stage">
+        <div style="text-align:center;">
+          <h1 style="margin:0 0 0.2rem;font-size:1.5rem;" id="live-course-name"></h1>
+          <p class="text-muted" style="margin:0;font-size:0.875rem;" id="live-course-code"></p>
+        </div>
+
+        <div class="qr-frame">
+          <div class="qr-frame-inner" id="qr-frame-inner">
+            <div id="qr-canvas-holder" style="display:flex;justify-content:center;"></div>
+            <div class="qr-expired" id="qr-expired" style="display:none;"></div>
+          </div>
+        </div>
+
+        <div class="qr-meta">
+          <div class="qr-meta-item">
+            <span class="qr-meta-icon" id="icon-timer"></span>
+            <div><span class="qr-meta-label">Expires in</span><span class="qr-meta-val" id="countdown"></span></div>
+          </div>
+          <div class="qr-meta-item">
+            <span class="qr-meta-icon" id="icon-award"></span>
+            <div><span class="qr-meta-label">Mark value</span><span class="qr-meta-val" id="mark-value-display"></span></div>
+          </div>
+        </div>
+
+        <button class="btn btn-destructive-outline btn-lg" id="end-session-btn">End Session</button>
+      </div>
+
+      <div class="card card-flush" style="align-self:start;">
+        <div class="card-header">
+          <h3 class="card-title" style="display:flex;align-items:center;gap:0.5rem;font-size:0.875rem;">
+            <span class="pulse-dot"></span> Live Attendance
+          </h3>
+        </div>
+        <div class="card-content">
+          <ul class="arrivals-list" id="arrivals-list">
+            <li class="empty-state">Waiting for students to scan…</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+</template>
+
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2/dist/umd/supabase.js"></script>
+<script src="../../js/lib/client.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/qrcode@1.4.4/build/qrcode.min.js"></script>
+<script src="../../js/lib/icons.js"></script>
+<script src="../../js/lib/store.js"></script>
+<script src="../../js/lib/shell.js"></script>
+<script>window.BASE_PATH = '../../';</script>
+<script src="../../js/lecturer/session.js"></script>
+</body>
+</html>

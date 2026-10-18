@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Profile — AttendPro</title>
+<link rel="stylesheet" href="../../css/style.css">
+<link rel="stylesheet" href="../../css/dashboard.css">
+</head>
+<body>
+<div id="app-shell-root"></div>
+
+<template id="tpl-profile">
+  <div class="page-heading">
+    <h1>Profile</h1>
+    <p>Your account and academic details.</p>
+  </div>
+
+  <div class="card profile-card">
+    <div class="card-header">
+      <div class="profile-head">
+        <span class="avatar avatar-lg" id="profile-avatar"></span>
+        <div>
+          <h3 class="card-title" id="profile-name" style="font-size:1.1rem;"></h3>
+          <span class="role">Student</span>
+        </div>
+      </div>
+    </div>
+    <div class="card-content" style="padding-top:0;">
+      <hr class="separator" style="margin-bottom:0.25rem;">
+      <dl id="profile-rows" style="margin:0;"></dl>
+    </div>
+  </div>
+</template>
+
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2/dist/umd/supabase.js"></script>
+<script src="../../js/lib/client.js"></script>
+<script src="../../js/lib/icons.js"></script>
+<script src="../../js/lib/store.js"></script>
+<script src="../../js/lib/shell.js"></script>
+<script>window.BASE_PATH = '../../';</script>
+<script src="../../js/student/profile.js"></script>
+</body>
+</html>

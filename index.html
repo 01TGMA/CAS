@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>AttendPro — Login</title>
+<link rel="stylesheet" href="css/style.css">
+<link rel="stylesheet" href="css/dashboard.css">
+</head>
+<body>
+
+<main class="auth-page">
+  <div class="auth-wrap">
+    <div class="auth-heading">
+      <div class="brand">
+        <span class="brand-mark" id="brand-icon"></span>
+        <span class="brand-name">AttendPro</span>
+      </div>
+      <h1 id="heading-title">Welcome back</h1>
+      <p>Smart Attendance &amp; Examination Eligibility System</p>
+    </div>
+
+    <div class="auth-card">
+      <div class="tabs-list" id="role-tabs">
+        <button class="tab-trigger active" data-role="student" type="button" id="tab-student"></button>
+        <button class="tab-trigger" data-role="lecturer" type="button" id="tab-lecturer"></button>
+      </div>
+
+      <form id="auth-form">
+        <div class="field" id="name-field" style="display:none;">
+          <label class="field-label" for="name">Full name</label>
+          <input class="input" id="name" placeholder="Jane Doe" autocomplete="name">
+        </div>
+
+        <div class="field">
+          <label class="field-label" for="email">Email</label>
+          <input class="input" id="email" type="email" placeholder="you@university.edu" autocomplete="email">
+        </div>
+
+        <div class="field">
+          <label class="field-label" for="password">Password</label>
+          <input class="input" id="password" type="password" placeholder="••••••••" autocomplete="current-password">
+        </div>
+
+        <div class="field" id="student-id-field" style="display:none;">
+          <label class="field-label" for="studentId">Student ID</label>
+          <input class="input" id="studentId" placeholder="e.g. 20231042" inputmode="numeric">
+        </div>
+
+        <div class="field" id="department-field" style="display:none;">
+          <label class="field-label" for="department">Department</label>
+          <select class="input" id="department"><option value="">Loading...</option></select>
+        </div>
+
+        <button type="submit" class="btn btn-primary btn-lg btn-block" id="submit-btn">Login</button>
+      </form>
+    </div>
+
+    <p class="auth-switch">
+      <span id="switch-text">New to AttendPro? </span>
+      <button type="button" id="switch-mode">Register</button>
+    </p>
+  </div>
+</main>
+
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2/dist/umd/supabase.js"></script>
+<script src="js/lib/client.js"></script>
+<script src="js/lib/icons.js"></script>
+<script src="js/lib/store.js"></script>
+<script src="js/auth/auth.js"></script>
+</body>
+</html>
