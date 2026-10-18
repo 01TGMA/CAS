@@ -30,7 +30,7 @@ const Shell = {
           <div class="flex items-center gap-3">
             <div class="brand">
               <span class="brand-mark inverted">${Icons.graduationCap('icon')}</span>
-              <span class="brand-name inverted">AttendPro</span>
+              <span class="brand-name inverted">Caleb Attendace System</span>
             </div>
             <span class="role-pill">${roleLabel}</span>
           </div>

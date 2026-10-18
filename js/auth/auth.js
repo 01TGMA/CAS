@@ -75,7 +75,7 @@
     els.studentIdField.style.display = studentRegister ? 'flex' : 'none';
     els.departmentField.style.display = studentRegister ? 'flex' : 'none';
     els.submitBtn.textContent = isLogin ? 'Login' : 'Create account';
-    els.switchText.textContent = isLogin ? 'New to AttendPro? ' : 'Already have an account? ';
+    els.switchText.textContent = isLogin ? 'New to Caleb Attendace System? ' : 'Already have an account? ';
     els.switchMode.textContent = isLogin ? 'Register' : 'Login';
     els.tabStudent.classList.toggle('active', role === 'student');
     els.tabLecturer.classList.toggle('active', role === 'lecturer');
